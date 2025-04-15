@@ -14,8 +14,10 @@ int main() {
     float Área1,Área2;
     float PIB1,PIB2;
     int NPturísticos1,NPturísticos2; // Número de pontos turísticos
-    float DP1,DP2;   //Densidade Populacional
-    float PPC1,PPC2; //PIB per capita 
+    float DP1,DP2;
+    float PPC1,PPC2;
+
+    DP1 = População1 /= Área1;
 
 
     printf ("Digite Estado da sua cidade: \n");
@@ -73,7 +75,7 @@ int main() {
     printf ("Estado: %s\n",Estado1);
     printf ("Código da carta: %s\n",CodCarta1);
     printf ("Nome da Cidade: %s\n",Cidade1);
-printf ("População:  %f\n", População1);
+printf ("População:  %d\n", População1);
 printf ("Área:  %f\n", Área1);
 printf ("PIB:  %f\n", PIB1);
 printf ("Número de pontos turísticos:  %d\n", NPturísticos1);
@@ -82,23 +84,25 @@ printf ("Número de pontos turísticos:  %d\n", NPturísticos1);
  printf ("Estado: %s\n",Estado2); 
     printf ("Código da carta: %s\n",CodCarta2);
 printf ("Nome da Cidade: %s\n",Cidade2);
-printf ("População:  %f\n", População2);
+printf ("População:  %d\n", População2);
 printf ("Área:  %f\n", Área2);
 printf ("PIB:  %f\n", PIB2);
 printf ("Número de pontos turísticos:  %d\n", NPturísticos2);
 
 
     DP1 = População1 / Área1;
-   printf ("A Densidade Populacional é: %.2f \n", DP1);
+   printf ("DP1 é:  %d\n", DP1);
     
     DP2 = População2 / Área2;
-   printf (" A Densidade Populacional é:  %.2f \n", DP2);
-
-   PPC1 = PIB1 / População1;
-   printf ("PIB per capita é: %.2f \n", PPC1);
+   printf ("DP2 é:  %d\n", DP2);
    
-   PPC2 = PIB2 / População2;
-   printf ("PIB per capita é: %.2f \n", PPC2);
+
+   if (População1 > População2 ) {
+    printf("A população da carta 1 é maior! Carta 1 vence.\n");
+  } else {
+    printf("A população da carta 2 é maior! Carta 2 vence.\n");
+  }
+   
 
     return 0;
 
